@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser');
 const port = 9999
 
+app.use(bodyParser.json())
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Sandbox Bakti x ITB !')
 })
 
 app.post('/sandbox',(req,res)=>{
@@ -11,5 +14,5 @@ app.post('/sandbox',(req,res)=>{
 })
 
 app.listen(port, () => {
-  console.log(`Sandbox running at port :${port}`)
+  console.log(`Sandbox running at port : ${port}`)
 })
